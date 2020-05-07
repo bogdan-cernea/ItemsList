@@ -11,21 +11,41 @@ import UIKit
 class ItemsListTableViewController: UITableViewController {
     
     let cellIdentifier = "ItemCell"
+    var list = List(title: "", items: [Item]()) {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    var getItemsTask: URLSessionDataTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(ItemTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
+        self.tableView.register(ItemTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
+        self.getItemsTask = DataManager.shared.getItems { [weak self] (result) in
+            self?.getItemsTask = nil // reset task
+            switch result {
+            case .success(let list):
+                self?.list = list
+            case .failure(let err):
+                //TODO: - show error
+                print(err)
+            }
+        }
     }
-
+    
     // MARK: - UITableViewDelegate & UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        return list.items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ItemTableViewCell else {
+            return .init()
+        }
+        cell.item = list.items[indexPath.row]
         return cell
         
     }

@@ -10,6 +10,12 @@ import UIKit
 
 class ItemTableViewCell: UITableViewCell {
 
+    var item: Item? {
+        didSet {
+            self.textLabel?.text = self.item?.title
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
