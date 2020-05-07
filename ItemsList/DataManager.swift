@@ -44,7 +44,6 @@ class DataManager {
                     //handle success
                     let jsonData = try swiftyJsonVar.rawData(options: .fragmentsAllowed)
                     let list = try decoder.decode(List.self, from: jsonData)
-                    print(list)
                     completion(.success(list))
                 } else {
                     completion(.failure(APIError.invalidResponseData))

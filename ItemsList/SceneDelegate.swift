@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ItemsListTableViewController()
+        window.rootViewController = UINavigationController(rootViewController: ItemsListTableViewController())
         self.window = window
         window.makeKeyAndVisible()
     }

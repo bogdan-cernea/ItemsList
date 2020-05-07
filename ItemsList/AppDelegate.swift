@@ -16,7 +16,7 @@ var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let window = UIWindow()
-        window.rootViewController = ItemsListTableViewController()
+        window.rootViewController = UINavigationController(rootViewController: ItemsListTableViewController()) 
         self.window = window
         window.makeKeyAndVisible()
         
