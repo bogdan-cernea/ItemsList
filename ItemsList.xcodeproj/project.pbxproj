@@ -147,14 +147,12 @@
 			children = (
 				8455E3332463DE7700C02B68 /* AppDelegate.swift */,
 				8455E3352463DE7700C02B68 /* SceneDelegate.swift */,
-				84A8BAEF2463F06F00B88D09 /* ItemsListTableViewController.swift */,
-				8455E3632463E0AE00C02B68 /* ItemTableViewCell.swift */,
-				84B8A4B224641CCE0097F465 /* DataManager.swift */,
-				84B8A4AE2463FDDC0097F465 /* Item.swift */,
-				84B8A4B02463FDFF0097F465 /* List.swift */,
-				8455E33C2463DE7800C02B68 /* Assets.xcassets */,
-				8455E33E2463DE7800C02B68 /* LaunchScreen.storyboard */,
 				8455E3412463DE7800C02B68 /* Info.plist */,
+				84B8A4B7246462CC0097F465 /* View Controllers */,
+				84B8A4B8246462F00097F465 /* Views */,
+				84B8A4B5246462720097F465 /* DataManager */,
+				84B8A4B4246462410097F465 /* Models */,
+				84B8A4B6246462A60097F465 /* Resources */,
 			);
 			path = ItemsList;
 			sourceTree = "<group>";
@@ -175,6 +173,48 @@
 				8455E3572463DE7800C02B68 /* Info.plist */,
 			);
 			path = ItemsListUITests;
+			sourceTree = "<group>";
+		};
+		84B8A4B4246462410097F465 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84B8A4AE2463FDDC0097F465 /* Item.swift */,
+				84B8A4B02463FDFF0097F465 /* List.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84B8A4B5246462720097F465 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				84B8A4B224641CCE0097F465 /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		84B8A4B6246462A60097F465 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8455E33C2463DE7800C02B68 /* Assets.xcassets */,
+				8455E33E2463DE7800C02B68 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		84B8A4B7246462CC0097F465 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84A8BAEF2463F06F00B88D09 /* ItemsListTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		84B8A4B8246462F00097F465 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8455E3632463E0AE00C02B68 /* ItemTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
